@@ -19,7 +19,7 @@ network="mainnet"
 ```
 
 The following is a table regarding the network on Cardano
-| Network | Network Name |
+| cli Parameter | Network Name |
 |---------|---------|
 | testnet-magic 1 | Preprod |
 | testnet-magic 2 | Preview | 
