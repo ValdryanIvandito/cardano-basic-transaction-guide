@@ -72,7 +72,7 @@ myAddress=$(cat payment.addr)
 echo $myAddress
 ```
 
-**Note:** After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following link [Official Cardano Faucet](https://docs.cardano.org/cardano-testnet/tools/faucet/)
+**Note:** After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following Official Cardano Faucet [link](https://docs.cardano.org/cardano-testnet/tools/faucet/)
 
 ## Display The Balance
 
