@@ -18,7 +18,7 @@ _or_
 network="mainnet"
 ```
 
-The following is a table regarding the network on Cardano
+**The following is a table regarding the network on Cardano**
 | cli Parameter | Network Name |
 |---------|---------|
 | testnet-magic 1 | Preprod |
@@ -72,7 +72,7 @@ myAddress=$(cat payment.addr)
 echo $myAddress
 ```
 
-- **Note:** After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following link [Official Cardano Faucet](https://docs.cardano.org/cardano-testnet/tools/faucet/)
+**Note:** After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following link [Official Cardano Faucet](https://docs.cardano.org/cardano-testnet/tools/faucet/)
 
 ## Display The Balance
 
