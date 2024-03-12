@@ -123,3 +123,9 @@ cardano-cli transaction submit \
 ```
 
 **Result:** Transaction successfully submitted
+
+**Note:** You can track the transaction using a blockchain explorer, such as Cardano Explorer or CardanoScan. Copy the link below:
+
+```bash
+https://preprod.cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+```
