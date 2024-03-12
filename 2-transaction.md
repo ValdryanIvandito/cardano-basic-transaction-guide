@@ -115,6 +115,8 @@ cardano-cli transaction build \
 --out-file transaction.raw
 ```
 
+**Estimated transaction fee:** Lovelace 168669
+
 Multiple Transaction:
 
 ```bash
@@ -127,6 +129,8 @@ cardano-cli transaction build \
 --change-address $myAddress \
 --out-file transaction.raw
 ```
+
+**Estimated transaction fee:** Lovelace 171133
 
 ## Sign Transaction
 
