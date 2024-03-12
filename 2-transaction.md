@@ -83,14 +83,14 @@ utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 
 ## Initiate the Output: Recipient Address and Amount to Send
 
-Single Transaction:
+**Single Transaction:**
 
 ```bash
 recipientAddress="COPY THE RECIPIENT ADDRESS HERE"
 amount="AMOUNT IN LOVELACE"
 ```
 
-Multiple Transaction:
+**Multiple Transaction:**
 
 ```bash
 recipientAddress1="COPY THE RECIPIENT1 ADDRESS HERE"
@@ -103,7 +103,7 @@ amount2="AMOUNT2 IN LOVELACE"
 
 ## Build Transaction
 
-Single Transaction:
+**Single Transaction:**
 
 ```bash
 cardano-cli transaction build \
@@ -117,7 +117,7 @@ cardano-cli transaction build \
 
 **Estimated transaction fee:** Lovelace 168669
 
-Multiple Transaction:
+**Multiple Transaction:**
 
 ```bash
 cardano-cli transaction build \
