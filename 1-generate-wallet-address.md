@@ -1,6 +1,6 @@
 # Generate Wallet Address
 
-This documentation explains how to generate a wallet address using the cardano-cli. Follow the steps below:
+This documentation explains how to generate Cardano wallet address using the cardano-cli. Follow the steps below:
 
 ## Initiate Blockchain Network
 
@@ -27,7 +27,7 @@ network="mainnet"
 | testnet-magic 2 | Preview |
 | mainnet | Mainnet |
 
-## Test Querying The Blockchain
+## Test Querying The Blockchain (Optional)
 
 ```bash
 cardano-cli query tip \
@@ -84,7 +84,7 @@ addr_test1vzws4fmc9rds6cvc7fcah8lsc3axquaqn2r0ulxrzxze0ccmx4x5l
 
 **Note:** After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following Official Cardano Faucet [link](https://docs.cardano.org/cardano-testnet/tools/faucet/)
 
-## Display The Balance
+## Display Information About the UTxO (Check Balance)
 
 ```bash
 cardano-cli query utxo \

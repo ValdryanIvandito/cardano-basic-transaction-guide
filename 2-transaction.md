@@ -1,12 +1,14 @@
 # Transaction
 
-This documentation explains how to perform a basic transaction. For example, if you want to send some ADA to another address from the wallet address generated earlier (refer to this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md)), follow the steps below:
+This documentation explains how to perform a basic transaction in Cardano. For example, if you want to send some ADA to another address from the wallet address generated earlier. Follow the steps below:
 
 ## Generate Wallet Address (Optional)
 
 If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) first.
 
-## Initiate Blockchain Network
+## Initiate Blockchain Network (Optional)
+
+**Note:** If you have choosen the network, you can skip this step
 
 ```bash
 network="testnet-magic 1"
@@ -31,7 +33,7 @@ network="mainnet"
 | testnet-magic 2 | Preview |
 | mainnet | Mainnet |
 
-## Test Querying The Blockchain
+## Test Querying The Blockchain (Optional)
 
 ```bash
 cardano-cli query tip \
@@ -40,12 +42,47 @@ cardano-cli query tip \
 
 **Note:** Use the following command to ensure that the ledger in the database has been synchronized 100%
 
+## Initiate the Input: Sender Address, Transaction Hash (TxHash), Transaction Index (TxIx)
 
-
-## Determine the Recipient Address and Amount to Send (Output)
+### Display The Address
 
 ```bash
-recipientAddress="RECIPIENT ADDRESS"
+myAddress=$(cat payment.addr)
+echo $myAddress
+```
+
+**Example Address:**
+
+```bash
+addr_test1vzws4fmc9rds6cvc7fcah8lsc3axquaqn2r0ulxrzxze0ccmx4x5l
+```
+
+### Display Information About the UTxO
+
+```bash
+cardano-cli query utxo \
+--address $myAddress \
+--$network
+```
+
+**Example Result:**
+
+```bash
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
+```
+
+### Initiate TxHash and TxIx
+
+```bash
+utxo=<COPY THE TX-HASH HERE>#<TX-IX NUMBER>
+```
+
+## Initiate the Output: Recipient Address and Amount to Send
+
+```bash
+recipientAddress="COPY THE RECIPIENT ADDRESS HERE"
 amount="AMOUNT IN LOVELACE"
 ```
 
@@ -57,9 +94,26 @@ amount="AMOUNT IN LOVELACE"
 cardano-cli transaction build \
 --babbage-era \
 --$network \
---tx-in $txHash#$txIx \
---tx-out $walletAddress+$sendAmountWallet \
---tx-out $paymentAddress+$sendAmountPayment \
---change-address $txAddress \
---out-file myTransaction/tx.draft
+--tx-in $utxo \
+--tx-out $recipientAddress+$amount \
+--change-address $myAddress \
+--out-file transaction.raw
+```
+
+## Sign Transaction
+
+```bash
+cardano-cli transaction sign \
+--$network \
+--tx-body-file transaction.raw \
+--signing-key-file payment.skey \
+--out-file transaction.signed
+```
+
+## Submit Transaction
+
+```bash
+cardano-cli transaction submit \
+--$network \
+--tx-file transaction.signed
 ```
