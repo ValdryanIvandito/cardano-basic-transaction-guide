@@ -76,7 +76,11 @@ myAddress=$(cat payment.addr)
 echo $myAddress
 ```
 
-**Example Address:** addr_test1vzws4fmc9rds6cvc7fcah8lsc3axquaqn2r0ulxrzxze0ccmx4x5l
+**Example Address:**
+
+```bash
+addr_test1vzws4fmc9rds6cvc7fcah8lsc3axquaqn2r0ulxrzxze0ccmx4x5l
+```
 
 **Note:** After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following Official Cardano Faucet [link](https://docs.cardano.org/cardano-testnet/tools/faucet/)
 
@@ -89,7 +93,12 @@ cardano-cli query utxo \
 ```
 
 **Example Result:**
-echo "62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81 0 1000000000 lovelace + TxOutDatumNone"
+
+```bash
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
+```
 
 ## Demo
 
@@ -97,5 +106,9 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 
 ## References
 
-[Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)  
+[Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
 [Gimbalabs PlutusPBL](https://plutuspbl.io/modules/102/slts)
+
+```
+
+```
