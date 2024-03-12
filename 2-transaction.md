@@ -76,7 +76,7 @@ cardano-cli query utxo \
 ### Initiate TxHash and TxIx
 
 ```bash
-utxo=<COPY THE TX-HASH HERE>#<TX-IX NUMBER>
+utxo="COPY THE TX-HASH HERE"#"TX-IX NUMBER"
 ```
 
 ## Initiate the Output: Recipient Address and Amount to Send
