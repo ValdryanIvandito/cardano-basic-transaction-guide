@@ -102,6 +102,8 @@ cardano-cli transaction build \
 --out-file transaction.raw
 ```
 
+**Estimated transaction fee:** Lovelace 168361
+
 ## Sign Transaction
 
 ```bash
@@ -119,3 +121,5 @@ cardano-cli transaction submit \
 --$network \
 --tx-file transaction.signed
 ```
+
+**Result:** Transaction successfully submitted
