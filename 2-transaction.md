@@ -117,6 +117,8 @@ cardano-cli transaction build \
 
 **Estimated transaction fee:** Lovelace 168669
 
+**Note:** Each transaction can have one or multiple inputs, and one or multiple outputs
+
 **Multiple Transaction:**
 
 ```bash
