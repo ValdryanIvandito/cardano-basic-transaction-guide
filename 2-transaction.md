@@ -75,22 +75,33 @@ cardano-cli query utxo \
 
 ### Initiate TxHash and TxIx
 
+**Note:** Each transaction can have one or multiple inputs, and one or multiple outputs
+
+**Single Input:**
+
 ```bash
 utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
+```
+
+**Multiple Input:**
+
+```bash
+utxo1="COPY THE TX-HASH1 HERE#COPY THE TX-IX1 NUMBER HERE"
+utxo2="COPY THE TX-HASH2 HERE#COPY THE TX-IX2 NUMBER HERE"
 ```
 
 **Note:** TxHash and TxIx are restricted between **#**
 
 ## Initiate the Output: Recipient Address and Amount to Send
 
-**Single Transaction:**
+**Single Output:**
 
 ```bash
 recipientAddress="COPY THE RECIPIENT ADDRESS HERE"
 amount="AMOUNT IN LOVELACE"
 ```
 
-**Multiple Transaction:**
+**Multiple Output:**
 
 ```bash
 recipientAddress1="COPY THE RECIPIENT1 ADDRESS HERE"
@@ -117,15 +128,14 @@ cardano-cli transaction build \
 
 **Estimated transaction fee:** Lovelace 168669
 
-**Note:** Each transaction can have one or multiple inputs, and one or multiple outputs
-
 **Multiple Transaction:**
 
 ```bash
 cardano-cli transaction build \
 --babbage-era \
 --$network \
---tx-in $utxo \
+--tx-in $utxo1 \
+--tx-in $utxo2 \
 --tx-out $recipientAddress1+$amount1 \
 --tx-out $recipientAddress2+$amount2 \
 --change-address $myAddress \
