@@ -1,6 +1,6 @@
 # Metadata
 
-This documentation explains how to perform a transaction with metadata in Cardano. Follow the steps below:
+This documentation explains how to perform a metadata transaction in Cardano. Follow the steps below:
 
 ## Generate Wallet Address (Optional)
 
@@ -92,14 +92,18 @@ amount="AMOUNT IN LOVELACE"
 
 ## Create JSON Metadata
 
+**Note:** To create JSON metadata, you can choose to use either Vim or Nano.
+
+### Using Vim
+
 ```bash
 vim metadata.json
 ```
 
-**Hint:**
+**Intructions:**
 
-1. press i
-2. Following is example metadata in form a message with code 674
+1. press 'i' to enter insert mode
+2. Copy and paste the example metadata provided below:
 
 ```JSON
 {
@@ -111,8 +115,31 @@ vim metadata.json
 }
 ```
 
-3. press esc
-4. :wq
+3. Press Esc to exit insert mode.
+4. Type :wq to save and exit Vim.
+
+### Using Nano
+
+```bash
+nano metadata.json
+```
+
+**Intructions:**
+
+1. Copy and paste the example metadata provided below:
+
+```JSON
+{
+  "674": {
+    "msg": [
+      "Indonesian Cardano Developer Community"
+    ]
+  }
+}
+```
+
+2. Press CTRL + X.
+3. If prompted with "Save modified buffer?", press Y, then press Enter to confirm saving.
 
 ## Build Transaction
 
@@ -127,7 +154,7 @@ cardano-cli transaction build \
 --out-file transaction.raw
 ```
 
-**Estimated transaction fee:** Lovelace 168669
+**Estimated transaction fee:** Lovelace 172101
 
 ## Sign Transaction
 
