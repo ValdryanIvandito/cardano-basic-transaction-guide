@@ -8,7 +8,7 @@ This documentation explains how to perform a basic transaction in Cardano. For e
 
 If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) first.
 
-## Step-2 Initiate Blockchain Network (Optional)
+## Step-2 Initiate Cardano Network (Optional)
 
 **_Hint: If you have choosen the network, you can skip this step_**
 

@@ -58,7 +58,7 @@ cardano-cli query utxo \
 ### Inisiasi TxHash dan TxIx
 
 ```bash
-utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
+utxo="COPY TX-HASH DISINI#COPY TX-IX DISINI"
 ```
 
 **_Catatan: TxHash dan TxIx dibatasi antara '#'_**
@@ -66,8 +66,8 @@ utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 ## Langkah-4 Inisiasi Parameter Output: Alamat Penerima dan Jumlah ADA yang Akan Dikirim
 
 ```bash
-recipientAddress="COPY THE RECIPIENT ADDRESS HERE"
-amount="AMOUNT IN LOVELACE"
+recipientAddress="COPY ALAMAT PENERIMA DISINI"
+amount="JUMLAH DALAM LOVELACE"
 ```
 
 **_Catatan: 1₳ = 1,000,000 Lovelace_**

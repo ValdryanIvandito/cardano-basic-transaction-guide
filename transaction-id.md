@@ -1,16 +1,16 @@
-# Transaction
+# Pendahuluan
 
-This documentation explains how to perform a basic transaction in Cardano. For example, if you want to send some ADA to another address from the wallet address generated earlier. Follow the steps below:
+Dokumentasi ini menjelaskan cara membuat transaksi di Cardano, ikuti langkah-langkah dibawah ini.
 
-# Step by Step
+# Langkah-Langkah
 
-## Step-1 Generate Wallet Address
+## Langkah-1 Membuat Alamat Dompet
 
-If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) first.
+Jika Anda belum membuat Alamat Dompet, ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-basic-transaction-guides/blob/main/generate-wallet-address-id.md) berikut.
 
-## Step-2 Initiate Blockchain Network (Optional)
+## Langkah-2 Inisiasi Jaringan Cardano (Opsional)
 
-**_Hint: If you have choosen the network, you can skip this step_**
+**_Petunjuk: Jika Anda sudah memilih jaringan, Anda dapat melewati langkah ini_**
 
 ```bash
 network="testnet-magic 1"
@@ -28,18 +28,18 @@ _or_
 network="mainnet"
 ```
 
-**The following is a table regarding the network on Cardano**
+**Berikut ini adalah tabel mengenai jaringan Cardano**
 | cli Parameter | Network Name |
 |---------|---------|
 | testnet-magic 1 | Preprod |
 | testnet-magic 2 | Preview |
 | mainnet | Mainnet |
 
-## Step-3 Initiate the Input: Transaction Hash (TxHash) and Transaction Index (TxIx) from Wallet Address (Sender)
+## Langkah-3 Inisiasi Parameter Input: Hash Transaksi (TxHash) dan Indeks Transaksi (TxIx) dari Alamat Dompet (Pengirim)
 
-**_Hint: Assuming you already have a Wallet Address_**
+**_Petunjuk: Asumsi Anda telah memiliki Alamat Dompet_**
 
-### Display Information About the Wallet Address UTxO
+### Menampilkan Informasi Mengenai UTxO Alamat Dompet
 
 ```bash
 cardano-cli query utxo \
@@ -47,7 +47,7 @@ cardano-cli query utxo \
 --$network
 ```
 
-**Example Result:**
+**Contoh Hasil:**
 
 ```bash
                            TxHash                                 TxIx        Amount
@@ -55,48 +55,48 @@ cardano-cli query utxo \
 62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
 ```
 
-### Initiate TxHash and TxIx
+### Inisiasi TxHash dan TxIx
 
-**_Note: Each transaction can have one or multiple inputs, and one or multiple outputs_**
+**_Catatan: Setiap transaksi dapat memiliki satu atau beberapa input, dan satu atau beberapa output_**
 
-**Single Input:**
+**Satu Input:**
 
 ```bash
-utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
+utxo="COPY TX-HASH DISINI#COPY TX-IX DISINI"
 ```
 
-**Multiple Input:**
+**Beberapa Input:**
 
 ```bash
-utxo1="COPY THE TX-HASH1 HERE#COPY THE TX-IX1 NUMBER HERE"
-utxo2="COPY THE TX-HASH2 HERE#COPY THE TX-IX2 NUMBER HERE"
+utxo1="COPY TX-HASH1 DISINI#COPY TX-IX1 DISINI"
+utxo2="COPY TX-HASH2 DISINI#COPY TX-IX2 DISINI"
 ```
 
-**_Note: TxHash and TxIx are restricted between '#'_**
+**_Catatan: TxHash dan TxIx dibatasi antara '#'_**
 
-## Step-4 Initiate the Output: Recipient Address and Amount to Send
+## Langkah-4 Inisiasi Parameter Output: Alamat Penerima dan Jumlah ADA yang Akan Dikirim
 
-**Single Output:**
+**Satu Output:**
 
 ```bash
-recipientAddress="COPY THE RECIPIENT ADDRESS HERE"
-amount="AMOUNT IN LOVELACE"
+recipientAddress="COPY ALAMAT PENERIMA DISINI"
+amount="JUMLAH DALAM LOVELACE"
 ```
 
-**Multiple Output:**
+**Beberapa Output:**
 
 ```bash
-recipientAddress1="COPY THE RECIPIENT1 ADDRESS HERE"
-recipientAddress2="COPY THE RECIPIENT2 ADDRESS HERE"
+recipientAddress1="COPY THE RECIPIENT1 ADDRESS DISINI"
+recipientAddress2="COPY THE RECIPIENT2 ADDRESS DISINI"
 amount1="AMOUNT1 IN LOVELACE"
 amount2="AMOUNT2 IN LOVELACE"
 ```
 
-**_Note: 1₳ = 1,000,000 Lovelace_**
+**_Catatan: 1₳ = 1,000,000 Lovelace_**
 
-## Step-5 Build Transaction
+## Langkah-5 Membuat Transaksi
 
-**Single Transaction:**
+**Satu Transaksi:**
 
 ```bash
 cardano-cli transaction build \
@@ -108,7 +108,7 @@ cardano-cli transaction build \
 --out-file transaction.raw
 ```
 
-**Multiple Transaction:**
+**Beberapa Transaksi:**
 
 ```bash
 cardano-cli transaction build \
@@ -122,7 +122,7 @@ cardano-cli transaction build \
 --out-file transaction.raw
 ```
 
-## Step-6 Sign Transaction
+## Langkah-6 Menandatangani Transaksi
 
 ```bash
 cardano-cli transaction sign \
@@ -132,7 +132,7 @@ cardano-cli transaction sign \
 --out-file transaction.signed
 ```
 
-## Step-7 Submit Transaction
+## Langkah-7 Mengirim Transaksi
 
 ```bash
 cardano-cli transaction submit \
@@ -140,31 +140,31 @@ cardano-cli transaction submit \
 --tx-file transaction.signed
 ```
 
-**_Hint: You can track the transaction using a blockchain explorer, such as Cardano Explorer or CardanoScan. Copy the link below._**
+**_Petunjuk: Anda dapat melacak transaksi menggunakan penjelajah blockchain, seperti Cardano Explorer atau CardanoScan. Salin tautan di bawah ini._**
 
 Preprod:
 
 ```bash
-https://preprod.cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://preprod.cardanoscan.io/transaction/COPY-THE-TX-HASH-DISINI
 ```
 
 Preview:
 
 ```bash
-https://preview.cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://preview.cardanoscan.io/transaction/COPY-THE-TX-HASH-DISINI
 ```
 
 Mainnet:
 
 ```bash
-https://cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://cardanoscan.io/transaction/COPY-THE-TX-HASH-DISINI
 ```
 
 # Demo
 
-The following is a video recorded by the Indonesian Cardano Developers Community where I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, here is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ)
+The following is a video recorded by the Indonesian Cardano Developers Community wDISINI I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, DISINI is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ).
 
-# References
+# Referensi
 
 [Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
 
