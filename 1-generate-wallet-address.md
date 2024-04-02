@@ -2,7 +2,9 @@
 
 This documentation explains how to generate Cardano wallet address using the cardano-cli. Follow the steps below:
 
-## Initiate Blockchain Network
+# Step by Step
+
+## Step-1 Initiate Blockchain Network
 
 ```bash
 network="testnet-magic 1"
@@ -27,23 +29,23 @@ network="mainnet"
 | testnet-magic 2 | Preview |
 | mainnet | Mainnet |
 
-## Test Querying The Blockchain (Optional)
+## Step-2 Test Querying The Blockchain (Optional)
 
 ```bash
 cardano-cli query tip \
 --$network
 ```
 
-**Note:** Use the following command to ensure that the ledger in the database has been synchronized 100%
+**_Note: Use the following command to ensure that the ledger in the database has been synchronized 100%_**
 
-## Make Directory
+## Step-3 Make Directory
 
 ```bash
 mkdir myWallet
 cd myWallet
 ```
 
-## Create Payment Verification (Public) and Signing (Private) Key
+## Step-4 Create Payment Verification (Public) and Signing (Private) Key
 
 ```bash
 cardano-cli address key-gen \
@@ -51,7 +53,7 @@ cardano-cli address key-gen \
 --signing-key-file payment.skey
 ```
 
-## Create Stake Verification and Signing Key
+## Step-5 Create Stake Verification and Signing Key
 
 ```bash
 cardano-cli stake-address key-gen \
@@ -59,7 +61,7 @@ cardano-cli stake-address key-gen \
 --signing-key-file stake.skey
 ```
 
-## Create Address
+## Step-6 Create Address
 
 ```bash
 cardano-cli address build \
@@ -69,7 +71,7 @@ cardano-cli address build \
 --$network
 ```
 
-## Display The Address
+## Step-7 Display The Address
 
 ```bash
 myAddress=$(cat payment.addr)
@@ -82,9 +84,9 @@ echo $myAddress
 addr_test1vzws4fmc9rds6cvc7fcah8lsc3axquaqn2r0ulxrzxze0ccmx4x5l
 ```
 
-**Note:** After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following Official Cardano Faucet [link](https://docs.cardano.org/cardano-testnet/tools/faucet/)
+**_Note: After successfully generating a wallet address, you can top up your balance using the Cardano Faucet at the following Official Cardano Faucet [link](https://docs.cardano.org/cardano-testnet/tools/faucet/)_**
 
-## Display Information About the UTxO (Check Balance)
+## Step-8 Display Information About the Address UTxO (Check Balance)
 
 ```bash
 cardano-cli query utxo \
@@ -100,11 +102,11 @@ cardano-cli query utxo \
 62c0ce8d6e0b584e9e263e3ba076f53c23095ebd0a9198305819cfa5ecef8e81     0        1000000000 lovelace + TxOutDatumNone
 ```
 
-## Demo
+# Demo
 
 The following is a video recorded by the Indonesian Cardano Developers Community where I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, here is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ)
 
-## References
+# References
 
 [Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
 

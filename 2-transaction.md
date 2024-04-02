@@ -2,13 +2,15 @@
 
 This documentation explains how to perform a basic transaction in Cardano. For example, if you want to send some ADA to another address from the wallet address generated earlier. Follow the steps below:
 
-## Generate Wallet Address (Optional)
+# Step by Step
+
+## Step-1 Generate Wallet Address
 
 If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) first.
 
-## Initiate Blockchain Network (Optional)
+## Step-2 Initiate Blockchain Network (Optional)
 
-**Note:** If you have choosen the network, you can skip this step
+**_Hint: If you have choosen the network, you can skip this step_**
 
 ```bash
 network="testnet-magic 1"
@@ -33,31 +35,11 @@ network="mainnet"
 | testnet-magic 2 | Preview |
 | mainnet | Mainnet |
 
-## Test Querying The Blockchain (Optional)
+## Step-3 Initiate the Input: Transaction Hash (TxHash) and Transaction Index (TxIx) from Wallet Address (Sender)
 
-```bash
-cardano-cli query tip \
---$network
-```
+**_Hint: Assuming you already have a Wallet Address_**
 
-**Note:** Use the following command to ensure that the ledger in the database has been synchronized 100%
-
-## Initiate the Input: Sender Address, Transaction Hash (TxHash), Transaction Index (TxIx)
-
-### Display The Address
-
-```bash
-myAddress=$(cat payment.addr)
-echo $myAddress
-```
-
-**Example Address:**
-
-```bash
-addr_test1vzws4fmc9rds6cvc7fcah8lsc3axquaqn2r0ulxrzxze0ccmx4x5l
-```
-
-### Display Information About the UTxO
+### Display Information About the Wallet Address UTxO
 
 ```bash
 cardano-cli query utxo \
@@ -75,7 +57,7 @@ cardano-cli query utxo \
 
 ### Initiate TxHash and TxIx
 
-**Note:** Each transaction can have one or multiple inputs, and one or multiple outputs
+**_Note: Each transaction can have one or multiple inputs, and one or multiple outputs_**
 
 **Single Input:**
 
@@ -90,9 +72,9 @@ utxo1="COPY THE TX-HASH1 HERE#COPY THE TX-IX1 NUMBER HERE"
 utxo2="COPY THE TX-HASH2 HERE#COPY THE TX-IX2 NUMBER HERE"
 ```
 
-**Note:** TxHash and TxIx are restricted between **#**
+**_Note: TxHash and TxIx are restricted between '#'_**
 
-## Initiate the Output: Recipient Address and Amount to Send
+## Step-4 Initiate the Output: Recipient Address and Amount to Send
 
 **Single Output:**
 
@@ -110,9 +92,9 @@ amount1="AMOUNT1 IN LOVELACE"
 amount2="AMOUNT2 IN LOVELACE"
 ```
 
-**Note:** 1₳ = 1,000,000 Lovelace
+**_Note: 1₳ = 1,000,000 Lovelace_**
 
-## Build Transaction
+## Step-5 Build Transaction
 
 **Single Transaction:**
 
@@ -125,8 +107,6 @@ cardano-cli transaction build \
 --change-address $myAddress \
 --out-file transaction.raw
 ```
-
-**Estimated transaction fee:** Lovelace 168669
 
 **Multiple Transaction:**
 
@@ -142,9 +122,7 @@ cardano-cli transaction build \
 --out-file transaction.raw
 ```
 
-**Estimated transaction fee:** Lovelace 171133
-
-## Sign Transaction
+## Step-6 Sign Transaction
 
 ```bash
 cardano-cli transaction sign \
@@ -154,7 +132,7 @@ cardano-cli transaction sign \
 --out-file transaction.signed
 ```
 
-## Submit Transaction
+## Step-7 Submit Transaction
 
 ```bash
 cardano-cli transaction submit \
@@ -162,9 +140,7 @@ cardano-cli transaction submit \
 --tx-file transaction.signed
 ```
 
-**Result:** Transaction successfully submitted
-
-**Note:** You can track the transaction using a blockchain explorer, such as Cardano Explorer or CardanoScan. Copy the link below:
+**_Hint: You can track the transaction using a blockchain explorer, such as Cardano Explorer or CardanoScan. Copy the link below._**
 
 Preprod:
 
@@ -184,11 +160,11 @@ Mainnet:
 https://cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
 ```
 
-## Demo
+# Demo
 
 The following is a video recorded by the Indonesian Cardano Developers Community where I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, here is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ)
 
-## References
+# References
 
 [Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
 
