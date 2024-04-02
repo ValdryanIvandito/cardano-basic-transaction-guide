@@ -1,4 +1,4 @@
-This documentation provides a simplified, step-by-step guide on basic transactions using cardano-cli, making it easy for beginners who are learning Cardano for the first time to practice.
+This documentation provides a simplified, step-by-step guide on basic transaction using cardano-cli, making it easy for beginners who are learning Cardano for the first time to practice.
 
 This documentation consists of:
 
