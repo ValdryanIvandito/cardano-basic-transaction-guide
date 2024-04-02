@@ -1,10 +1,10 @@
-# Metadata
+# Transaction
 
-This documentation explains how to perform a metadata transaction in Cardano. Follow the steps below:
+This documentation explains how to perform a basic transaction in Cardano. For example, if you want to send some ADA to another address from the wallet address generated earlier. Follow the steps below:
 
 # Step by Step
 
-## Step-1 Generate Wallet Address (Optional)
+## Step-1 Generate Wallet Address
 
 If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) first.
 
@@ -57,73 +57,46 @@ cardano-cli query utxo \
 
 ### Initiate TxHash and TxIx
 
+**_Note: Each transaction can have one or multiple inputs, and one or multiple outputs_**
+
+**Single Input:**
+
 ```bash
 utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
+```
+
+**Multiple Input:**
+
+```bash
+utxo1="COPY THE TX-HASH1 HERE#COPY THE TX-IX1 NUMBER HERE"
+utxo2="COPY THE TX-HASH2 HERE#COPY THE TX-IX2 NUMBER HERE"
 ```
 
 **_Note: TxHash and TxIx are restricted between '#'_**
 
 ## Step-4 Initiate the Output: Recipient Address and Amount to Send
 
+**Single Output:**
+
 ```bash
 recipientAddress="COPY THE RECIPIENT ADDRESS HERE"
 amount="AMOUNT IN LOVELACE"
 ```
 
+**Multiple Output:**
+
+```bash
+recipientAddress1="COPY THE RECIPIENT1 ADDRESS HERE"
+recipientAddress2="COPY THE RECIPIENT2 ADDRESS HERE"
+amount1="AMOUNT1 IN LOVELACE"
+amount2="AMOUNT2 IN LOVELACE"
+```
+
 **_Note: 1₳ = 1,000,000 Lovelace_**
 
-## Step-5 Create JSON Metadata
+## Step-5 Build Transaction
 
-**_Hint: To create JSON metadata, you can choose to use either Vim or Nano._**
-
-### Using Vim
-
-```bash
-vim metadata.json
-```
-
-**Intructions:**
-
-1. press 'i' to enter insert mode
-2. Copy and paste the example metadata provided below:
-
-```JSON
-{
-  "674": {
-    "msg": [
-      "Indonesian Cardano Developer Community"
-    ]
-  }
-}
-```
-
-3. Press Esc to exit insert mode.
-4. Type :wq to save and exit Vim.
-
-### Using Nano
-
-```bash
-nano metadata.json
-```
-
-**Intructions:**
-
-1. Copy and paste the example metadata provided below:
-
-```JSON
-{
-  "674": {
-    "msg": [
-      "Indonesian Cardano Developer Community"
-    ]
-  }
-}
-```
-
-2. Press CTRL + X.
-3. If prompted with "Save modified buffer?", press Y, then press Enter to confirm saving.
-
-## Step-6 Build Transaction
+**Single Transaction:**
 
 ```bash
 cardano-cli transaction build \
@@ -131,12 +104,25 @@ cardano-cli transaction build \
 --$network \
 --tx-in $utxo \
 --tx-out $recipientAddress+$amount \
---metadata-json-file metadata.json \
 --change-address $myAddress \
 --out-file transaction.raw
 ```
 
-## Step-7 Sign Transaction
+**Multiple Transaction:**
+
+```bash
+cardano-cli transaction build \
+--babbage-era \
+--$network \
+--tx-in $utxo1 \
+--tx-in $utxo2 \
+--tx-out $recipientAddress1+$amount1 \
+--tx-out $recipientAddress2+$amount2 \
+--change-address $myAddress \
+--out-file transaction.raw
+```
+
+## Step-6 Sign Transaction
 
 ```bash
 cardano-cli transaction sign \
@@ -146,7 +132,7 @@ cardano-cli transaction sign \
 --out-file transaction.signed
 ```
 
-## Step-8 Submit Transaction
+## Step-7 Submit Transaction
 
 ```bash
 cardano-cli transaction submit \
@@ -180,6 +166,6 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 
 # References
 
-[Developer Portal: Metadata Transaction Guide](https://developers.cardano.org/docs/transaction-metadata/how-to-create-a-metadata-transaction-cli/)
+[Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
 
 [Gimbalabs PlutusPBL](https://plutuspbl.io/modules/102/slts)
