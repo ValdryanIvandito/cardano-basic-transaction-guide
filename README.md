@@ -1,4 +1,4 @@
-This documentation provides a simplified, step-by-step guide on basic transaction using cardano-cli, making it easy for beginners who are learning Cardano for the first time to practice.
+This documentation provides a simplified, step-by-step guide on basic transaction using cardano-cli, making it easy for beginners who are learning Cardano.
 
 This documentation consists of:
 
@@ -6,7 +6,7 @@ This documentation consists of:
 2. [Basic Transaction](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/transaction-eng.md)
 3. [Transaction with Metadata](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/metadata-eng.md)
 
-Dokumentasi ini menyediakan panduan langkah demi langkah yang disederhanakan mengenai transaksi dasar menggunakan cardano-cli, sehingga mudah bagi pemula yang baru pertamakali mempelajari Cardano.
+Dokumentasi ini menyediakan panduan langkah demi langkah yang disederhanakan mengenai transaksi dasar menggunakan cardano-cli, sehingga mudah bagi pemula yang sedang mempelajari Cardano.
 
 Dokumentasi ini terdiri dari:
 
