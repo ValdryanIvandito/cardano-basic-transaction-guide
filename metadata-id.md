@@ -6,7 +6,7 @@ Dokumentasi ini menjelaskan cara membuat transaksi yang disertakan metadata di C
 
 ## Langkah-1 Membuat Alamat Dompet (Optional)
 
-Jika Anda belum membuat Alamat Dompet, ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-basic-transaction-guides/blob/main/generate-wallet-address-id.md) berikut.
+Jika Anda belum membuat Alamat Dompet, ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/generate-wallet-address-id.md) berikut.
 
 ## Langkah-2 Inisiasi Jaringan Cardano (Opsional)
 
@@ -91,7 +91,7 @@ vim metadata.json
 {
   "674": {
     "msg": [
-      "Indonesian Cardano Developer Community"
+      "Cardano Developer Community Indonesia"
     ]
   }
 }
@@ -114,7 +114,7 @@ nano metadata.json
 {
   "674": {
     "msg": [
-      "Indonesian Cardano Developer Community"
+      "Cardano Developer Community Indonesia"
     ]
   }
 }
@@ -159,19 +159,19 @@ cardano-cli transaction submit \
 Preprod:
 
 ```bash
-https://preprod.cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://preprod.cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 Preview:
 
 ```bash
-https://preview.cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://preview.cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 Mainnet:
 
 ```bash
-https://cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
+https://cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 # Demo
@@ -180,6 +180,8 @@ Berikut adalah video yang direkam oleh Komunitas Developer Cardano Indonesia di 
 
 # Referensi
 
-[Developer Portal: Metadata Transaction Guide](https://developers.cardano.org/docs/transaction-metadata/how-to-create-a-metadata-transaction-cli/)
+[Gimbalabs PPBL2023 Module 203.1: Transaction Metadata](https://plutuspbl.io/modules/203/2031)
 
-[Gimbalabs PlutusPBL](https://plutuspbl.io/modules/102/slts)
+[Cardano Developer Portal: Metadata Transaction Guide](https://developers.cardano.org/docs/transaction-metadata/how-to-create-a-metadata-transaction-cli/)
+
+[CIP-0010: Transaction Metadata Label Registry](https://github.com/cardano-foundation/CIPs/blob/868ae58447c953cc6115b61064af6d5ad30edd87/CIP-0010/README.md)

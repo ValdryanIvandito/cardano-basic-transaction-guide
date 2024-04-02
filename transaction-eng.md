@@ -6,7 +6,7 @@ This documentation explains how to perform a basic transaction in Cardano. For e
 
 ## Step-1 Generate Wallet Address
 
-If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) first.
+If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/generate-wallet-address-eng.md) first.
 
 ## Step-2 Initiate Cardano Network (Optional)
 
@@ -166,6 +166,6 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 
 # References
 
-[Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
+[Gimbalabs PPBL2023 Module 102.3: Build a Simple Transaction](https://plutuspbl.io/modules/102/1023)
 
-[Gimbalabs PlutusPBL](https://plutuspbl.io/modules/102/slts)
+[Cardano Developer Portal: Create Simple Transactions](https://developers.cardano.org/docs/get-started/create-simple-transaction/#build-the-transaction)

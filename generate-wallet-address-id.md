@@ -108,6 +108,8 @@ Berikut adalah video yang direkam oleh Komunitas Developer Cardano Indonesia di 
 
 # Referensi
 
-[Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
+[Gimbalabs PPBL2023 Module 102.2: Build an Address](https://plutuspbl.io/modules/102/1022)
 
-[Gimbalabs PlutusPBL](https://plutuspbl.io/modules/102/slts)
+[Cardano Developer Portal: Generating Wallet Keys](https://developers.cardano.org/docs/operate-a-stake-pool/generating-wallet-keys/)
+
+[CIP-0019: Cardano Addresses](https://developers.cardano.org/docs/operate-a-stake-pool/generating-wallet-keys/)

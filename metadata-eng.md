@@ -6,7 +6,7 @@ This documentation explains how to build transaction that include metadata on Ca
 
 ## Step-1 Generate Wallet Address (Optional)
 
-If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-basic-transaction-guides/blob/main/generate-wallet-address-eng.md) first.
+If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/generate-wallet-address-eng.md) first.
 
 ## Step-2 Initiate Cardano Network (Optional)
 
@@ -91,7 +91,7 @@ vim metadata.json
 {
   "674": {
     "msg": [
-      "Indonesian Cardano Developer Community"
+      "Cardano Developer Community Indonesia"
     ]
   }
 }
@@ -114,7 +114,7 @@ nano metadata.json
 {
   "674": {
     "msg": [
-      "Indonesian Cardano Developer Community"
+      "Cardano Developer Community Indonesia"
     ]
   }
 }
@@ -180,6 +180,8 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 
 # References
 
-[Developer Portal: Metadata Transaction Guide](https://developers.cardano.org/docs/transaction-metadata/how-to-create-a-metadata-transaction-cli/)
+[Gimbalabs PPBL2023 Module 203.1: Transaction Metadata](https://plutuspbl.io/modules/203/2031)
 
-[Gimbalabs PlutusPBL](https://plutuspbl.io/modules/102/slts)
+[Cardano Developer Portal: Metadata Transaction Guide](https://developers.cardano.org/docs/transaction-metadata/how-to-create-a-metadata-transaction-cli/)
+
+[CIP-0010: Transaction Metadata Label Registry](https://github.com/cardano-foundation/CIPs/blob/868ae58447c953cc6115b61064af6d5ad30edd87/CIP-0010/README.md)

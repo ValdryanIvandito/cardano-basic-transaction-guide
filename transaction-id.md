@@ -6,7 +6,7 @@ Dokumentasi ini menjelaskan cara membuat transaksi di Cardano, ikuti langkah-lan
 
 ## Langkah-1 Membuat Alamat Dompet
 
-Jika Anda belum membuat Alamat Dompet, ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-basic-transaction-guides/blob/main/generate-wallet-address-id.md) berikut.
+Jika Anda belum membuat Alamat Dompet, ikuti [dokumentasi](https://github.com/ValdryanIvandito/cardano-basic-transaction-guide/blob/main/generate-wallet-address-id.md) berikut.
 
 ## Langkah-2 Inisiasi Jaringan Cardano (Opsional)
 
@@ -145,19 +145,19 @@ cardano-cli transaction submit \
 Preprod:
 
 ```bash
-https://preprod.cardanoscan.io/transaction/COPY-THE-TX-HASH-DISINI
+https://preprod.cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 Preview:
 
 ```bash
-https://preview.cardanoscan.io/transaction/COPY-THE-TX-HASH-DISINI
+https://preview.cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 Mainnet:
 
 ```bash
-https://cardanoscan.io/transaction/COPY-THE-TX-HASH-DISINI
+https://cardanoscan.io/transaction/COPY-TX-HASH-DISINI
 ```
 
 # Demo
@@ -166,6 +166,6 @@ The following is a video recorded by the Indonesian Cardano Developers Community
 
 # Referensi
 
-[Official Documentation](https://docs.cardano.org/development-guidelines/use-cli/)
+[Gimbalabs PPBL2023 Module 102.3: Build a Simple Transaction](https://plutuspbl.io/modules/102/1023)
 
-[Gimbalabs PlutusPBL](https://plutuspbl.io/modules/102/slts)
+[Cardano Developer Portal: Create Simple Transactions](https://developers.cardano.org/docs/get-started/create-simple-transaction/#build-the-transaction)
