@@ -6,9 +6,9 @@ This documentation explains how to build transaction that include metadata on Ca
 
 ## Step-1 Generate Wallet Address (Optional)
 
-If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-cli-simplified/blob/main/1-generate-wallet-address.md) first.
+If you haven't generated a wallet address, you should follow this [documentation](https://github.com/ValdryanIvandito/cardano-basic-transaction-guides/blob/main/generate-wallet-address-eng.md) first.
 
-## Step-2 Initiate Blockchain Network (Optional)
+## Step-2 Initiate Cardano Network (Optional)
 
 **_Hint: If you have choosen the network, you can skip this step_**
 
@@ -63,7 +63,7 @@ utxo="COPY THE TX-HASH HERE#COPY THE TX-IX NUMBER HERE"
 
 **_Note: TxHash and TxIx are restricted between '#'_**
 
-## Step-4 Initiate the Output: Recipient Address and Amount to Send
+## Step-4 Initiate the Output: Recipient Address and Amount ADA to Send
 
 ```bash
 recipientAddress="COPY THE RECIPIENT ADDRESS HERE"
@@ -84,7 +84,7 @@ vim metadata.json
 
 **Intructions:**
 
-1. press 'i' to enter insert mode
+1. Press 'i' character on the keyboard to enter insert mode
 2. Copy and paste the example metadata provided below:
 
 ```JSON
@@ -97,8 +97,8 @@ vim metadata.json
 }
 ```
 
-3. Press Esc to exit insert mode.
-4. Type :wq to save and exit Vim.
+3. Press 'Esc' on the keyboard to exit insert mode
+4. Type :wq to save and exit Vim
 
 ### Using Nano
 
@@ -120,7 +120,7 @@ nano metadata.json
 }
 ```
 
-2. Press CTRL + X.
+2. Press CTRL + x
 3. If prompted with "Save modified buffer?", press Y, then press Enter to confirm saving.
 
 ## Step-6 Build Transaction
@@ -176,7 +176,7 @@ https://cardanoscan.io/transaction/COPY-THE-TX-HASH-HERE
 
 # Demo
 
-The following is a video recorded by the Indonesian Cardano Developers Community where I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, here is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ)
+The following is a video recorded by the Indonesian Cardano Developers Community where I demonstrated the steps above. Watch the recorded video at timestamp **_1:27:27_**, here is the [link](https://youtu.be/03hXLZ_07N0?list=PLUj8499OocHiL8gXPv8wMlLW-zIcyYdrQ).
 
 # References
 
